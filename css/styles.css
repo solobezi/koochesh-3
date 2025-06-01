@@ -140,7 +140,7 @@ header {
   transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
-.country-card.open .country-details {
+.country-card.expanded .country-details {
   max-height: 500px;
   padding: 1rem;
 }
@@ -186,8 +186,8 @@ header {
 }
 
 /* ===== CONTACT FORM ===== */
-input,
-textarea {
+.contact input,
+.contact textarea {
   width: 100%;
   padding: 1rem;
   background: #121212;
@@ -199,7 +199,7 @@ textarea {
   resize: vertical;
 }
 
-button {
+.contact button {
   padding: 1rem 2rem;
   font-size: 1rem;
   background: linear-gradient(to left, var(--main-gold), var(--hover-gold));
@@ -213,12 +213,12 @@ button {
   width: 100%;
 }
 
-button:hover {
+.contact button:hover {
   transform: scale(1.05);
   background: var(--hover-gold);
 }
 
-button:disabled {
+.contact button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
