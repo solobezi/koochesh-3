@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koochesh Away | مهاجرت</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #0f0f0f;
+      color: #f1f1f1;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #0f0f0f;
+      border-bottom: 1px solid #222;
+    }
+    header img {
+      max-width: 160px;
+      height: auto;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #bbbbbb;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #d4af37;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(to bottom right, #1a1a1a, #111);
+      border-bottom: 1px solid #333;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #d4af37;
+    }
+    .hero p {
+      color: #bbbbbb;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .country-box {
+      background-color: #1f1f1f;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .country-box:hover {
+      transform: translateY(-4px);
+      border-color: #d4af37;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    input, textarea {
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #333;
+      background-color: #2a2a2a;
+      color: #fff;
+    }
+    button {
+      background-color: #d4af37;
+      color: #0f0f0f;
+      border: none;
+      padding: 1rem;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #c89e2b;
+    }
+    footer {
+      background-color: #0f0f0f;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+    .social-icons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: grayscale(20%) brightness(0.95) contrast(1.05);
+    }
+    .social-icons img:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2) contrast(1.2);
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .country-grid {
+        grid-template-columns: 1fr;
+      }
+      .social-icons img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.ibb.co/1tmWwX8B/koochesh-logo-1.png" alt="koochesh-logo-1" />
+    <nav>
+      <a href="#countries">کشورها</a>
+      <a href="#contact">مشاوره</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>با خیال راحت مهاجرت کن</h1>
+    <p>کوچ آغاز ماجراست ...</p>
+  </section>
+  <section class="section" id="countries">
+    <h2>کشورهای مقصد</h2>
+    <div class="country-grid">
+      <div class="country-box" onclick="toggleDetails('italy')">
+        <h3><span style="color:#d4af37">IT</span> ایتالیا</h3>
+        <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
+        <div id="italy" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">ایتالیا با امکان دریافت بورسیه استانی و هزینه‌های پایین زندگی، یکی از گزینه‌های محبوب برای دانشجویان خارجی است...</div>
+      </div>
+      <div class="country-box" onclick="toggleDetails('france')">
+        <h3><span style="color:#d4af37">FR</span> فرانسه</h3>
+        <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
+        <div id="france" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">فرانسه با داشتن دانشگاه‌های دولتی با شهریه پایین...</div>
+      </div>
+      <div class="country-box" onclick="toggleDetails('netherlands')">
+        <h3><span style="color:#d4af37">NL</span> هلند</h3>
+        <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
+        <div id="netherlands" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">هلند یکی از معدود کشورهای اروپایی‌ست که اکثر برنامه‌ها...</div>
+      </div>
+      <div class="country-box" onclick="toggleDetails('spain')">
+        <h3><span style="color:#d4af37">ES</span> اسپانیا</h3>
+        <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
+        <div id="spain" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">اسپانیا با اقلیم مطلوب، کیفیت زندگی بالا...</div>
+      </div>
+    </div>
+  </section>
+  <section class="section contact" id="contact" style="max-width: 600px; margin: 4rem auto; background-color: #1a1a1a; padding: 2.5rem; border-radius: 20px; box-shadow: 0 0 30px rgba(0,0,0,0.4);">
+    <h2 style="text-align: center; color: #d4af37; margin-bottom: 2.5rem; font-size: 2rem; font-weight: 700;">درخواست مشاوره رایگان</h2>
+    <form id="form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <input type="text" id="name" name="name" placeholder="نام کامل شما" required />
+      <input type="tel" id="phone" name="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
+      <textarea id="message" name="message" rows="4" placeholder="چه کمکی از ما می‌خوای؟" required></textarea>
+      <button type="submit" id="submitBtn">ارسال درخواست</button>
+    </form>
+    <div id="status" class="form-status" style="margin-top: 1.5rem; text-align:center; font-size: 0.95rem; color: #ff6b6b;"></div>
+  </section>
+  <footer>
+    <div class="footer-wrapper">
+      <div class="footer-contact">
+        <p>تمامی حقوق محفوظ است برای Koochesh Away © 2025</p>
+      </div>
+      <div class="social-icons">
+        <a href="https://t.me/koochesh_migration" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" />
+        </a>
+        <a href="https://www.youtube.com/@koochesh" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        </a>
+        <a href="https://wa.me/989123456789" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+        </a>
+        <a href="https://instagram.com/koochesh" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+  </script>
+  <script src="form.js"></script>
+</body>
+</html>
