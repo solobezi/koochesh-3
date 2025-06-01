@@ -75,7 +75,8 @@ h2 {
   gap: 2rem;
   max-width: 900px;
   margin: auto;
-  align-items: flex-start;
+  align-items: start;
+  grid-auto-rows: auto; /* ✅ رفع مشکل ارتفاع کارت‌ها */
 }
 
 /* ===== COUNTRY CARD ===== */
