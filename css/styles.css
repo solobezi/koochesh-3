@@ -12,10 +12,11 @@
    ========================= */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Vazirmatn', sans-serif;
   background: var(--bg-dark);
   color: var(--text-light);
@@ -38,7 +39,6 @@ header {
 
 .site-logo {
   max-height: 120px;
-  height: auto;
   width: auto;
   max-width: 100%;
   margin-bottom: 1rem;
@@ -72,7 +72,7 @@ header {
 }
 
 /* =========================
-   SECTION TITLES
+   SECTION TITLE
    ========================= */
 .section {
   max-width: 1100px;
@@ -88,50 +88,81 @@ header {
 }
 
 /* =========================
-   COUNTRY GRID
+   COUNTRY GRID – UPDATED
    ========================= */
 .country-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-  justify-content: center;
+  max-width: 1100px;
+  margin: auto;
+  align-items: flex-start;
+  padding-bottom: 2rem;
 }
 
 /* کارت هر کشور */
 .country-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.8rem;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06); /* جلوهٔ Glassmorphism */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  flex: 0 1 240px;
-  text-align: right;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 16px;
+  padding: 1.8rem 1.2rem;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* راست‌چین کردن محتوا */
+  position: relative;
 }
 
+/* افکت hover روی کارت */
 .country-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* هدر کارت: پرچم و نام کشور */
+/* هدر کارت: شامل کد زبان و نام کشور */
 .country-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  text-align: center;
   margin-bottom: 1rem;
 }
 
-.country-flag {
-  font-size: 1.8rem;
-  margin-left: 0.6rem; /* فاصلهٔ سمت چپ چون راست‌چین است */
+/* کد زبان (بخش بالایی) */
+.country-code {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  opacity: 0.8;
 }
 
+/* نام کشور */
 .country-name {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--main-gold);
   margin: 0;
+}
+
+/* بخش جزئیات: لیست ویژگی‌ها و توضیحات تکمیلی (مخفی) */
+.country-details {
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+
+/* وقتی کارت باز شده (کلاس expanded) */
+.country-card.expanded .country-details {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 1rem;
 }
 
 /* لیست ویژگی‌ها */
@@ -139,28 +170,39 @@ header {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .country-features li {
   margin-bottom: 0.6rem;
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.5;
   position: relative;
-  padding-left: 1.1rem;
+  padding-right: 1.2rem; /* فضا برای بولت نقطهٔ سمت راست */
+  color: var(--text-light);
 }
 
-/* گلولهٔ سفارشی قبل از هر آیتم */
+/* بولت نقطه‌ای سفارشی (سمت راست) */
 .country-features li::before {
   content: "•";
   position: absolute;
-  left: 0;
+  right: 0;
   color: var(--main-gold);
   font-size: 1rem;
   line-height: 1;
 }
 
+/* توضیحات تکمیلی (extra) */
+.country-extra {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
 /* =========================
-   FORM ELEMENTS
+   CONTACT FORM
    ========================= */
 input,
 textarea {
@@ -264,42 +306,27 @@ footer {
 /* =========================
    MEDIA QUERIES (RESPONSIVE)
    ========================= */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.7rem !important;
-  }
-  .hero p {
-    font-size: 1rem !important;
-  }
-  .site-logo {
-    max-height: 100px !important;
-  }
-  .country-card {
-    flex: 0 1 180px;
+@media (max-width: 1024px) {
+  .country-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 600px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-  }
-  .social-icons {
-    flex-direction: row;
-    justify-content: center;
-    gap: 16px;
-  }
-  .social-icons img {
-    height: 30px;
-    width: 30px;
-  }
   .country-grid {
-    gap: 1rem;
+    grid-template-columns: 1fr;
   }
   .country-card {
-    flex: 0 1 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .country-features li {
+    padding-right: 0;
+    padding-left: 1.2rem; /* در حالت تک‌ستونی، بولت را به سمت چپ منتقل می‌کنیم */
+  }
+  .country-features li::before {
+    right: auto;
+    left: 0;
   }
 }
