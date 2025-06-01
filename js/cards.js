@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const isOpen = card.classList.contains('open');
 
       // بستن همه کارت‌ها
-      cards.forEach(c => c.classList.remove('open'));
+      cards.forEach(c => {
+        c.classList.remove('open');
+      });
 
-      // اگه کارت بسته بود، بازش کن
+      // اگر کارت قبلاً باز نبوده، بازش کن
       if (!isOpen) {
         card.classList.add('open');
       }
