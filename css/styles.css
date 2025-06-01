@@ -72,7 +72,7 @@ h2 {
 /* ===== COUNTRY GRID ===== */
 .country-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* دو تا کارت در یک ردیف */
   gap: 2rem;
   max-width: 1100px;
   margin: auto;
@@ -247,7 +247,7 @@ footer {
   width: 32px;
   object-fit: contain;
   transition: transform 0.2s ease;
-  filter: none; /* remove grayscale/invert */
+  filter: none;
 }
 
 .social-icons img:hover {
@@ -266,7 +266,7 @@ footer {
   }
 
   .country-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* موبایل: یک ستون */
   }
 
   .country-card {
