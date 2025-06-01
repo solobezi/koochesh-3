@@ -17,3 +17,4 @@ logs/
 
 # Ignore sensitive config
 .env
+includes/db.php
