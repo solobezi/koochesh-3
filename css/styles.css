@@ -24,40 +24,37 @@ body {
   overflow-x: hidden;
 }
 
-/* ====== HEADER ====== */
-header {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: radial-gradient(circle at center, #1c1c1c, var(--bg-dark));
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.site-logo {
-  max-height: 120px;
-  width: auto;
-  max-width: 100%;
-  margin-bottom: 1rem;
-}
-
-/* ====== HERO SECTION ====== */
+/* ===== HERO SECTION ===== */
 .hero {
+  background: linear-gradient(to right, #1a1a1a, #0d0d0d);
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(to right, #1b1b1b, #000);
+  gap: 1.5rem;
+}
+
+.hero-logo {
+  max-height: 140px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 
 .hero h1 {
-  font-size: 2.5rem;
   color: var(--main-gold);
+  font-size: 2.5rem;
   font-weight: 800;
   margin: 0;
 }
 
-/* ====== GENERAL SECTION ====== */
+/* ===== SECTIONS ===== */
 .section {
   max-width: 1100px;
   margin: auto;
@@ -71,7 +68,7 @@ h2 {
   font-size: 2rem;
 }
 
-/* ====== COUNTRY GRID ====== */
+/* ===== COUNTRY GRID ===== */
 .country-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -81,7 +78,7 @@ h2 {
   align-items: flex-start;
 }
 
-/* ====== COUNTRY CARD ====== */
+/* ===== COUNTRY CARD ===== */
 .country-card {
   display: flex;
   flex-direction: column;
@@ -157,7 +154,7 @@ h2 {
   text-align: right;
 }
 
-/* ====== CONTACT FORM ====== */
+/* ===== CONTACT FORM ===== */
 .contact input,
 .contact textarea {
   width: 100%;
@@ -202,7 +199,7 @@ h2 {
   color: var(--text-muted);
 }
 
-/* ====== FOOTER ====== */
+/* ===== FOOTER ===== */
 footer {
   background: #0c0c0c;
   color: #aaa;
@@ -255,8 +252,17 @@ footer {
   transform: scale(1.1);
 }
 
-/* ====== MEDIA QUERIES ====== */
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.6;
+  }
+
+  .hero-logo {
+    max-height: 100px;
+  }
+
   .country-grid {
     grid-template-columns: 1fr;
   }
@@ -279,9 +285,5 @@ footer {
   .footer-container {
     flex-direction: column;
     text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
   }
 }
