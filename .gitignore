@@ -1,1 +1,19 @@
 
+# Node modules (if you ever use JS build tools)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.tmp
+*.swp
+
+# PHP logs (if any)
+logs/
+*.log
+
+# Ignore sensitive config
+.env
