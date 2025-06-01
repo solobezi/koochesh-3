@@ -1,18 +1,18 @@
+// js/cards.js
+
 document.addEventListener('DOMContentLoaded', function () {
   const cards = document.querySelectorAll('.country-card');
 
   cards.forEach(card => {
     card.addEventListener('click', function () {
-      const isOpen = card.classList.contains('open');
+      const isOpen = this.classList.contains('open');
 
-      // بستن همه کارت‌ها
-      cards.forEach(c => {
-        c.classList.remove('open');
-      });
+      // بستن تمام کارت‌ها
+      cards.forEach(c => c.classList.remove('open'));
 
-      // اگر کارت قبلاً باز نبوده، بازش کن
+      // اگر قبلاً باز نبود، بازش کن
       if (!isOpen) {
-        card.classList.add('open');
+        this.classList.add('open');
       }
     });
   });
