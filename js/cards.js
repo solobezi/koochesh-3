@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const details = card.querySelector('.country-details');
 
     card.addEventListener('click', function () {
-      // بستن تمام کارت‌ها به جز کارت کلیک‌شده
+      // بستن همه کارت‌ها به جز کارت فعلی
       cards.forEach(c => {
         if (c !== card) {
           c.classList.remove('open');
@@ -15,13 +15,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // باز یا بسته کردن کارت کلیک‌شده
+      // وضعیت فعلی کارت کلیک‌شده
       const isOpen = card.classList.contains('open');
+
       if (isOpen) {
+        // اگه باز بود، ببندش
         details.style.maxHeight = null;
         details.style.padding = "0 1rem";
         card.classList.remove('open');
       } else {
+        // اگه بسته بود، بازش کن
         details.style.maxHeight = details.scrollHeight + "px";
         details.style.padding = "1rem";
         card.classList.add('open');
