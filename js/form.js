@@ -1,5 +1,7 @@
+// فایل: public_html/js/form.js
+
 document.getElementById('form').addEventListener('submit', function (e) {
-  e.preventDefault(); // مانع رفرش شدن صفحه می‌شود
+  e.preventDefault(); // جلوگیری از ارسال پیش‌فرض و ظهور پارامترها در URL
 
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
