@@ -90,30 +90,45 @@ header {
 /* =========================
    COUNTRY GRID – UPDATED
    ========================= */
+/* 
+   نکتهٔ کلیدی: با تعریف grid-auto-rows: 1fr 
+   تضمین می‌کنیم همه کارت‌ها در یک ردیف ارتفاع یکسان دارند.
+*/
 .country-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* هر کارت حداقل 240px عرض دارد و در صورت امکان تعداد بیشتری ستون می‌سازد */
   gap: 2rem;
   max-width: 1100px;
   margin: auto;
-  align-items: flex-start;
+  align-items: stretch;       /* این‌جا مهم است که stretch باشد */
+  grid-auto-rows: 1fr;        /* تمام ردیف‌ها ارتفاع یکسانی می‌گیرند */
   padding-bottom: 2rem;
 }
 
-/* کارت هر کشور */
+/* =========================
+   کارت هر کشور
+   ========================= */
+/*
+  - تمام کارت‌ها display: flex column دارند تا بتوانیم بخش هدر و جزئیات را عمودی بچینیم.
+  - ارتفاع داخلی کارت با grid-auto-rows: 1fr یکنواخت خواهد شد.
+*/
 .country-card {
   background: rgba(255, 255, 255, 0.06); /* جلوهٔ Glassmorphism */
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 1.8rem 1.2rem;
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  overflow: hidden;
+  
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* راست‌چین کردن محتوا */
+  justify-content: flex-start;
   position: relative;
+  
+  /* ارتفاع کارت‌ها را بر اساس parent grid برابر می‌کند */
+  height: 100%;
+  overflow: hidden; /* تا محتوا از فضای کارت بیرون نزند */
 }
 
 /* افکت hover روی کارت */
@@ -122,18 +137,16 @@ header {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* هدر کارت: شامل کد زبان و نام کشور */
+/* =========================
+   هدر کارت: شامل کد زبان و نام کشور
+   ========================= */
 .country-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* کد زبان (بخش بالایی) */
 .country-code {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -141,7 +154,6 @@ header {
   opacity: 0.8;
 }
 
-/* نام کشور */
 .country-name {
   font-size: 1.3rem;
   font-weight: 700;
@@ -149,20 +161,31 @@ header {
   margin: 0;
 }
 
-/* بخش جزئیات: لیست ویژگی‌ها و توضیحات تکمیلی (مخفی) */
+/* =========================
+   بخش جزئیات: لیست ویژگی‌ها و div اضافی
+   ========================= */
+/*
+  نکتهٔ مهم: این قسمت را با flex-grow (یا flex: 1) می‌دهیم 
+  تا فضای باقیماندهٔ کارت را پر کند. اگر متن داخلش طولانی باشد، 
+  scrollable می‌شود (overflow-y: auto).
+*/
 .country-details {
-  width: 100%;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  overflow: hidden;
+  flex: 1;            /* فضای باقیماندهٔ عمودی کارت را می‌گیرد */
+  overflow-y: auto;   /* اگر محتوا بیشتر باشد، اسکرول عمودی نمایش می‌دهد */
+  padding-right: 1.2rem; /* ایجاد فاصله برای بولت سمت راست */
+  padding-left: 0;       /* در حالت عادی بولت سمت راست است */
 }
 
-/* وقتی کارت باز شده (کلاس expanded) */
-.country-card.expanded .country-details {
-  max-height: 500px;
-  opacity: 1;
-  margin-top: 1rem;
+/* حذف scrollbar پیش‌فرض برای زیبایی (اختیاری) */
+.country-details::-webkit-scrollbar {
+  width: 6px;
+}
+.country-details::-webkit-scrollbar-track {
+  background: transparent;
+}
+.country-details::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
 }
 
 /* لیست ویژگی‌ها */
@@ -170,7 +193,6 @@ header {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
 }
 
 .country-features li {
@@ -178,7 +200,8 @@ header {
   font-size: 0.95rem;
   line-height: 1.5;
   position: relative;
-  padding-right: 1.2rem; /* فضا برای بولت نقطهٔ سمت راست */
+  /* چون راست‌چین هستیم، بولت سمت راست نمایش داده می‌شود */
+  padding-right: 1.2rem;
   color: var(--text-light);
 }
 
@@ -192,7 +215,7 @@ header {
   line-height: 1;
 }
 
-/* توضیحات تکمیلی (extra) */
+/* توضیحات تکمیلی (درون <p class="country-extra">) */
 .country-extra {
   margin-top: 1rem;
   font-size: 0.9rem;
@@ -308,7 +331,7 @@ footer {
    ========================= */
 @media (max-width: 1024px) {
   .country-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
   }
 }
@@ -323,7 +346,7 @@ footer {
   }
   .country-features li {
     padding-right: 0;
-    padding-left: 1.2rem; /* در حالت تک‌ستونی، بولت را به سمت چپ منتقل می‌کنیم */
+    padding-left: 1.2rem; /* در حالت تک‌ستونی، بولت سمت چپ */
   }
   .country-features li::before {
     right: auto;
