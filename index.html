@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Koochesh Away | مهاجرت</title>
+  <!-- فونت فارسی وزیـرمتن -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
+  <!-- ارجاع به فایل CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -23,56 +25,84 @@
   <section class="section" id="countries">
     <h2>کشورهای مقصد</h2>
     <div class="country-grid">
-      <!-- کارت اول: ایتالیا -->
-      <div class="country-card">
+      <!-- کارت اول: ایتالیا (IT) -->
+      <div class="country-card" data-country-id="it">
         <div class="country-header">
-          <span class="country-flag">🇮🇹</span>
+          <span class="country-code">IT</span>
           <h3 class="country-name">ایتالیا</h3>
         </div>
-        <ul class="country-features">
-          <li>تحصیل رایگان</li>
-          <li>زندگی مقرون‌به‌صرفه</li>
-          <li>بورسیه استانی</li>
-        </ul>
+        <div class="country-details">
+          <ul class="country-features">
+            <li>تحصیل رایگان</li>
+            <li>زندگی مقرون‌به‌صرفه</li>
+            <li>بورسیه استانی</li>
+          </ul>
+          <p class="country-extra">
+            • میانگین هزینه زندگی: 800 یورو/ماه<br>
+            • میانگین IELTS مورد نیاز: 6.5<br>
+            • امکان کار نیمه‌وقت دانشجویی
+          </p>
+        </div>
       </div>
 
-      <!-- کارت دوم: فرانسه -->
-      <div class="country-card">
+      <!-- کارت دوم: فرانسه (FR) -->
+      <div class="country-card" data-country-id="fr">
         <div class="country-header">
-          <span class="country-flag">🇫🇷</span>
+          <span class="country-code">FR</span>
           <h3 class="country-name">فرانسه</h3>
         </div>
-        <ul class="country-features">
-          <li>آموزش باکیفیت</li>
-          <li>هزینه پایین‌تر نسبت به دیگر کشورها</li>
-          <li>امکان کار دانشجویی</li>
-        </ul>
+        <div class="country-details">
+          <ul class="country-features">
+            <li>آموزش باکیفیت</li>
+            <li>هزینه پایین‌تر نسبت به دیگر کشورها</li>
+            <li>امکان کار دانشجویی</li>
+          </ul>
+          <p class="country-extra">
+            • شهریه دانشگاه‌های دولتی: رایگان یا &lt; 500 یورو/سال<br>
+            • میانگین هزینه زندگی: 700 یورو/ماه<br>
+            • ویزای دانشجویی با اجازه کار حداکثر 20 ساعت/هفته
+          </p>
+        </div>
       </div>
 
-      <!-- کارت سوم: هلند -->
-      <div class="country-card">
+      <!-- کارت سوم: هلند (NL) -->
+      <div class="country-card" data-country-id="nl">
         <div class="country-header">
-          <span class="country-flag">🇳🇱</span>
+          <span class="country-code">NL</span>
           <h3 class="country-name">هلند</h3>
         </div>
-        <ul class="country-features">
-          <li>تحصیل به زبان انگلیسی</li>
-          <li>بازار کار قوی</li>
-          <li>مهاجرپذیر بودن</li>
-        </ul>
+        <div class="country-details">
+          <ul class="country-features">
+            <li>تحصیل به زبان انگلیسی</li>
+            <li>بازار کار قوی</li>
+            <li>مهاجرپذیر بودن</li>
+          </ul>
+          <p class="country-extra">
+            • میانگین شهریه برای رشته‌های مقصد: 2,000–15,000 یورو/سال<br>
+            • هزینه زندگی در آمستردام: ~900 یورو/ماه<br>
+            • امکان دریافت بورسیه‌های کامل در چند دانشگاه برتر
+          </p>
+        </div>
       </div>
 
-      <!-- کارت چهارم: اسپانیا -->
-      <div class="country-card">
+      <!-- کارت چهارم: اسپانیا (ES) -->
+      <div class="country-card" data-country-id="es">
         <div class="country-header">
-          <span class="country-flag">🇪🇸</span>
+          <span class="country-code">ES</span>
           <h3 class="country-name">اسپانیا</h3>
         </div>
-        <ul class="country-features">
-          <li>دانشگاه‌های معتبر</li>
-          <li>هزینه زندگی معقول</li>
-          <li>کیفیت بالای زندگی</li>
-        </ul>
+        <div class="country-details">
+          <ul class="country-features">
+            <li>دانشگاه‌های معتبر</li>
+            <li>هزینه زندگی معقول</li>
+            <li>کیفیت بالای زندگی</li>
+          </ul>
+          <p class="country-extra">
+            • میانگین شهریه: 1,000–3,000 یورو/سال<br>
+            • هزینه زندگی در مادرید/بارسلونا: ~800 یورو/ماه<br>
+            • امکان یادگیری زبان اسپانیایی به‌عنوان مزیت کار پس از تحصیل
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -111,7 +141,20 @@
     </div>
   </footer>
 
-  <!-- لینک به فایل JS مجزا -->
+  <!-- ====== اسکریپت برای باز/بسته شدن جزئیات کارت‌ها ====== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.country-card');
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          this.classList.toggle('expanded');
+        });
+      });
+    });
+  </script>
+
+  <!-- اگر فایل جدا برای اسکریپت دارید، می‌توانید اینجا ارجاع دهید:
   <script src="js/form.js"></script>
+  -->
 </body>
 </html>
