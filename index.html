@@ -66,7 +66,6 @@
       border-radius: 16px;
       border: 1px solid #2a2a2a;
       transition: transform 0.3s ease;
-      cursor: pointer;
     }
     .country-box:hover {
       transform: translateY(-4px);
@@ -148,35 +147,46 @@
       <a href="#contact">مشاوره</a>
     </nav>
   </header>
+
   <section class="hero">
     <h1>با خیال راحت مهاجرت کن</h1>
     <p>کوچ آغاز ماجراست ...</p>
   </section>
+
   <section class="section" id="countries">
     <h2>کشورهای مقصد</h2>
     <div class="country-grid">
       <div class="country-box" onclick="toggleDetails('italy')">
         <h3><span style="color:#d4af37">IT</span> ایتالیا</h3>
         <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
-        <div id="italy" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">ایتالیا با امکان دریافت بورسیه استانی و هزینه‌های پایین زندگی، یکی از گزینه‌های محبوب برای دانشجویان خارجی است...</div>
+        <div id="italy" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">
+          ایتالیا با امکان دریافت بورسیه استانی و هزینه‌های پایین زندگی، یکی از گزینه‌های محبوب برای دانشجویان خارجی است...
+        </div>
       </div>
       <div class="country-box" onclick="toggleDetails('france')">
         <h3><span style="color:#d4af37">FR</span> فرانسه</h3>
         <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
-        <div id="france" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">فرانسه با داشتن دانشگاه‌های دولتی با شهریه پایین...</div>
+        <div id="france" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">
+          فرانسه با داشتن دانشگاه‌های دولتی با شهریه پایین...
+        </div>
       </div>
       <div class="country-box" onclick="toggleDetails('netherlands')">
         <h3><span style="color:#d4af37">NL</span> هلند</h3>
         <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
-        <div id="netherlands" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">هلند یکی از معدود کشورهای اروپایی‌ست که اکثر برنامه‌ها...</div>
+        <div id="netherlands" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">
+          هلند یکی از معدود کشورهای اروپایی‌ست که اکثر برنامه‌ها...
+        </div>
       </div>
       <div class="country-box" onclick="toggleDetails('spain')">
         <h3><span style="color:#d4af37">ES</span> اسپانیا</h3>
         <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
-        <div id="spain" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">اسپانیا با اقلیم مطلوب، کیفیت زندگی بالا...</div>
+        <div id="spain" class="details" style="display:none; font-size: 0.9rem; color:#bbb; margin-top:1rem;">
+          اسپانیا با اقلیم مطلوب، کیفیت زندگی بالا...
+        </div>
       </div>
     </div>
   </section>
+
   <section class="section contact" id="contact" style="max-width: 600px; margin: 4rem auto; background-color: #1a1a1a; padding: 2.5rem; border-radius: 20px; box-shadow: 0 0 30px rgba(0,0,0,0.4);">
     <h2 style="text-align: center; color: #d4af37; margin-bottom: 2.5rem; font-size: 2rem; font-weight: 700;">درخواست مشاوره رایگان</h2>
     <form id="form" style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -187,6 +197,7 @@
     </form>
     <div id="status" class="form-status" style="margin-top: 1.5rem; text-align:center; font-size: 0.95rem; color: #ff6b6b;"></div>
   </section>
+
   <footer>
     <div class="footer-wrapper">
       <div class="footer-contact">
@@ -208,6 +219,7 @@
       </div>
     </div>
   </footer>
+
   <script>
     function toggleDetails(id) {
       const el = document.getElementById(id);
