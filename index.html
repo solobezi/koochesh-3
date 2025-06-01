@@ -6,146 +6,167 @@
   <title>Koochesh Away | مهاجرت</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --main-gold: #d4af37;
+      --hover-gold: #c89e2b;
+      --bg-dark: #0f0f0f;
+      --bg-light: #1a1a1a;
+      --text-light: #f1f1f1;
+      --text-muted: #bbbbbb;
+    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Vazirmatn', sans-serif;
-      background-color: #0f0f0f;
-      color: #f1f1f1;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      scroll-behavior: smooth;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #0f0f0f;
-      border-bottom: 1px solid #222;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: radial-gradient(circle at center, #1c1c1c, #0f0f0f);
     }
     header img {
-      max-width: 160px;
-      height: auto;
-    }
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      color: #bbbbbb;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #d4af37;
+      max-height: 120px;
+      margin-bottom: 1rem;
     }
     .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 4rem 1rem;
-      background: linear-gradient(to bottom right, #1a1a1a, #111);
-      border-bottom: 1px solid #333;
+      padding: 5rem 2rem;
+      background: linear-gradient(to right, #1b1b1b, #000);
     }
     .hero h1 {
       font-size: 2.5rem;
-      color: #d4af37;
+      color: var(--main-gold);
+      margin-bottom: 1rem;
+      font-weight: 800;
     }
     .hero p {
-      color: #bbbbbb;
-      margin-top: 0.5rem;
+      max-width: 620px;
       font-size: 1.2rem;
+      line-height: 2;
+      opacity: 0.9;
     }
     .section {
-      padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+    .section h2 {
+      text-align: center;
+      color: var(--main-gold);
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
     .country-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
     .country-box {
-      background-color: #1f1f1f;
-      padding: 1.5rem;
-      border-radius: 16px;
-      border: 1px solid #2a2a2a;
-      transition: transform 0.3s ease;
-    }
-    .country-box:hover {
-      transform: translateY(-4px);
-      border-color: #d4af37;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(6px);
+      flex: 0 1 240px;
+      text-align: center;
     }
     input, textarea {
+      width: 100%;
       padding: 1rem;
+      background: #121212;
+      border: 1px solid #2a2a2a;
+      color: #eee;
       border-radius: 10px;
-      border: 1px solid #333;
-      background-color: #2a2a2a;
-      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 1rem;
     }
     button {
-      background-color: #d4af37;
-      color: #0f0f0f;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: linear-gradient(to left, var(--main-gold), var(--hover-gold));
+      color: #000;
       border: none;
-      padding: 1rem;
       border-radius: 10px;
-      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      width: 100%;
     }
     button:hover {
-      background-color: #c89e2b;
+      transform: scale(1.05);
+      background: var(--hover-gold);
     }
     footer {
-      background-color: #0f0f0f;
-      padding: 3rem 1rem 2rem;
+      background: #0c0c0c;
+      color: #aaa;
       text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.95rem;
       border-top: 1px solid #222;
     }
-    .social-icons {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .social-icons img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      filter: grayscale(20%) brightness(0.95) contrast(1.05);
-    }
-    .social-icons img:hover {
-      transform: scale(1.1);
-      filter: brightness(1.2) contrast(1.2);
-    }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem !important;
       }
       .hero p {
-        font-size: 1rem;
+        font-size: 1rem !important;
       }
-      .country-grid {
-        grid-template-columns: 1fr;
+      header img {
+        max-height: 100px !important;
+      }
+    }
+    @media (max-width: 600px) {
+      footer div {
+        flex-direction: column;
+        text-align: center;
+      }
+      footer div img {
+        margin: auto;
+      }
+    }
+    @media (max-width: 600px) {
+      footer > div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+      }
+      .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
       }
       .social-icons img {
-        width: 32px;
-        height: 32px;
+        height: 30px;
+        width: 30px;
+      }
+      .social-icons {
+        flex-direction: row;
+        justify-content: center;
+      }
+      footer div img {
+        margin: auto;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.ibb.co/1tmWwX8B/koochesh-logo-1.png" alt="koochesh-logo-1" />
-    <nav>
-      <a href="#countries">کشورها</a>
-      <a href="#contact">مشاوره</a>
-    </nav>
+    <img src="https://i.ibb.co/hx0PmScj/Koochesh-Away-Transparent-1.png" alt="لوگو" />
   </header>
 
   <section class="hero">
@@ -156,76 +177,52 @@
   <section class="section" id="countries">
     <h2>کشورهای مقصد</h2>
     <div class="country-grid">
-      <div class="country-box" onclick="toggleDetails('italy')">
-        <h3><span style="color:#d4af37">IT</span> ایتالیا</h3>
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇮🇹 ایتالیا</h3>
         <p>تحصیل رایگان، زندگی مقرون‌به‌صرفه، بورسیه استانی.</p>
-        <div id="italy" class="details" style="display:none; font-size:0.9rem; color:#bbb; margin-top:1rem;">
-          ایتالیا با امکان دریافت بورسیه استانی و هزینه‌های پایین زندگی، یکی از گزینه‌های محبوب برای دانشجویان خارجی است...
-        </div>
       </div>
-      <div class="country-box" onclick="toggleDetails('france')">
-        <h3><span style="color:#d4af37">FR</span> فرانسه</h3>
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇫🇷 فرانسه</h3>
         <p>آموزش باکیفیت، هزینه پایین‌تر، کار دانشجویی.</p>
-        <div id="france" class="details" style="display:none; font-size:0.9rem; color:#bbb; margin-top:1rem;">
-          فرانسه با داشتن دانشگاه‌های دولتی با شهریه پایین...
-        </div>
       </div>
-      <div class="country-box" onclick="toggleDetails('netherlands')">
-        <h3><span style="color:#d4af37">NL</span> هلند</h3>
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇳🇱 هلند</h3>
         <p>تحصیل به زبان انگلیسی، بازار کار قوی، مهاجرپذیر.</p>
-        <div id="netherlands" class="details" style="display:none; font-size:0.9rem; color:#bbb; margin-top:1rem;">
-          هلند یکی از معدود کشورهای اروپایی‌ست که اکثر برنامه‌ها...
-        </div>
       </div>
-      <div class="country-box" onclick="toggleDetails('spain')">
-        <h3><span style="color:#d4af37">ES</span> اسپانیا</h3>
+      <div class="country-box">
+        <h3 style="color: var(--main-gold);">🇪🇸 اسپانیا</h3>
         <p>تحصیل در دانشگاه‌های معتبر، زندگی باکیفیت.</p>
-        <div id="spain" class="details" style="display:none; font-size:0.9rem; color:#bbb; margin-top:1rem;">
-          اسپانیا با اقلیم مطلوب، کیفیت زندگی بالا...
-        </div>
       </div>
     </div>
   </section>
 
-  <section class="section contact" id="contact" style="max-width: 600px; margin: 4rem auto; background-color: #1a1a1a; padding: 2.5rem; border-radius: 20px; box-shadow: 0 0 30px rgba(0,0,0,0.4);">
-    <h2 style="text-align: center; color: #d4af37; margin-bottom: 2.5rem; font-size: 2rem; font-weight: 700;">درخواست مشاوره رایگان</h2>
-    <form id="form" style="display: flex; flex-direction: column; gap: 1.5rem;">
-      <input type="text" id="name" name="name" placeholder="نام کامل شما" required />
-      <input type="tel" id="phone" name="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
-      <textarea id="message" name="message" rows="4" placeholder="چه کمکی از ما می‌خوای؟" required></textarea>
+  <section class="section contact" id="contact">
+    <h2>فرم درخواست مشاوره</h2>
+    <form id="form">
+      <input type="text" id="name" name="name" placeholder="نام شما" required />
+      <input type="text" id="phone" name="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
+      <textarea id="message" name="message" rows="4" placeholder="پیام شما..." required></textarea>
       <button type="submit" id="submitBtn">ارسال درخواست</button>
     </form>
-    <div id="status" class="form-status" style="margin-top: 1.5rem; text-align:center; font-size: 0.95rem; color: #ff6b6b;"></div>
+    <div id="status" style="margin-top: 1rem; font-size: 0.95rem; text-align: center;"></div>
   </section>
 
   <footer>
-    <div class="footer-wrapper">
-      <div class="footer-contact">
-        <p>تمامی حقوق محفوظ است برای Koochesh Away © 2025</p>
+    <div style="max-width: 1100px; margin: auto; padding: 2rem 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: flex-start; gap: 2rem; line-height: 1.8; font-size: 0.95rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: right;">
+        <p style="font-size: 0.95rem; margin: 0;">تمامی حقوق محفوظ است برای Koochesh Away © 2025</p>
+        <p style="font-size: 0.95rem; margin: 0;">شماره تماس: -</p>
+        <p style="font-size: 0.95rem; margin: 0;">آدرس دفتر: -</p>
       </div>
-      <div class="social-icons">
-        <a href="https://t.me/koochesh_migration" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" />
-        </a>
-        <a href="https://www.youtube.com/@koochesh" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-        </a>
-        <a href="https://wa.me/989123456789" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-        </a>
-        <a href="https://instagram.com/koochesh" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" />
-        </a>
+      <div style="display: flex; gap: 14px; align-items: center; flex-direction: row; justify-content: center;" class="social-icons">
+        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="height: 28px; width: 28px; filter: invert(100%) sepia(0%) saturate(0%) brightness(200%) contrast(100%);"></a>
+        <a href="#" target="_blank" style="display: inline-block;"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" style="height: 28px; width: 28px; filter: invert(100%) sepia(0%) saturate(0%) brightness(200%) contrast(100%);"></a>
+        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="height: 28px; width: 28px; filter: invert(100%) sepia(0%) saturate(0%) brightness(200%) contrast(100%);"></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    function toggleDetails(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === "none" ? "block" : "none";
-    }
-  </script>
-  <script src="form.js"></script>
+  <!-- اینجا تگ اسکریپت خارجی را اضافه می‌کنیم -->
+  <script src="js/form.js"></script>
 </body>
 </html>
