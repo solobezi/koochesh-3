@@ -24,7 +24,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ====== SECTIONS ====== */
+/* ====== GENERAL SECTION STYLING ====== */
 .section {
   max-width: 1100px;
   margin: auto;
@@ -38,15 +38,18 @@ h2 {
   font-size: 2rem;
 }
 
-/* ====== COUNTRY GRID ====== */
+/* ====== COUNTRY GRID & CARDS ====== */
 .country-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  align-items: flex-start; /* کلید حل مشکل کشش کارت‌ها */
 }
 
-/* ====== COUNTRY CARD ====== */
 .country-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -94,13 +97,13 @@ h2 {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: right;
 }
 
 .country-features li {
   margin-bottom: 0.5rem;
   position: relative;
   padding-right: 1.2rem;
-  text-align: right;
 }
 
 .country-features li::before {
