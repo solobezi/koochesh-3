@@ -1,3 +1,4 @@
+/* css/styles.css */
 :root {
   --main-gold: #d4af37;
   --hover-gold: #c89e2b;
@@ -140,7 +141,7 @@ header {
   transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
-.country-card.expanded .country-details {
+.country-card.open .country-details {
   max-height: 500px;
   padding: 1rem;
 }
