@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -9,26 +8,17 @@
   <!-- فونت فارسی وزیـرمتن -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
 
-  <!-- ارجاع به فایل CSS -->
+  <!-- استایل -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- ====== HEADER ====== -->
-  <header>
-    <img src="images/koochesh-logo.png" alt="لوگو کوچش" class="site-logo" />
-  </header>
 
-  <!-- ====== HERO SECTION ====== -->
-  <section class="hero">
-    <h1>با خیال راحت مهاجرت کن</h1>
-    <p>کوچ آغاز ماجراست ...</p>
-  </section>
-
-  <!-- ====== COUNTRIES SECTION ====== -->
+  <!-- ====== SECTION: کشورهای مقصد ====== -->
   <section class="section" id="countries">
     <h2>کشورهای مقصد</h2>
     <div class="country-grid">
-      <!-- کارت اول: ایتالیا (IT) -->
+
+      <!-- کارت: ایتالیا -->
       <div class="country-card">
         <div class="country-header">
           <span class="country-code">IT</span>
@@ -48,7 +38,7 @@
         </div>
       </div>
 
-      <!-- کارت دوم: فرانسه (FR) -->
+      <!-- کارت: فرانسه -->
       <div class="country-card">
         <div class="country-header">
           <span class="country-code">FR</span>
@@ -61,14 +51,14 @@
             <li>امکان کار دانشجویی</li>
           </ul>
           <p class="country-extra">
-            • شهریه دانشگاه‌های دولتی: رایگان یا &lt; 500 یورو/سال<br />
-            • میانگین هزینه زندگی: 700 یورو/ماه<br />
-            • ویزای دانشجویی با اجازه کار حداکثر 20 ساعت/هفته
+            • شهریه دانشگاه‌های دولتی: رایگان یا کمتر از ۵۰۰ یورو/سال<br />
+            • میانگین هزینه زندگی: ۷۰۰ یورو/ماه<br />
+            • ویزای دانشجویی با اجازه کار ۲۰ ساعت/هفته
           </p>
         </div>
       </div>
 
-      <!-- کارت سوم: هلند (NL) -->
+      <!-- کارت: هلند -->
       <div class="country-card">
         <div class="country-header">
           <span class="country-code">NL</span>
@@ -81,14 +71,14 @@
             <li>مهاجرپذیر بودن</li>
           </ul>
           <p class="country-extra">
-            • میانگین شهریه برای رشته‌های مقصد: 2,000–15,000 یورو/سال<br />
-            • هزینه زندگی در آمستردام: ~900 یورو/ماه<br />
-            • امکان دریافت بورسیه‌های کامل در چند دانشگاه برتر
+            • شهریه: ۲,۰۰۰ تا ۱۵,۰۰۰ یورو/سال<br />
+            • هزینه زندگی در آمستردام: ~۹۰۰ یورو/ماه<br />
+            • امکان بورسیه کامل در برخی دانشگاه‌ها
           </p>
         </div>
       </div>
 
-      <!-- کارت چهارم: اسپانیا (ES) -->
+      <!-- کارت: اسپانیا -->
       <div class="country-card">
         <div class="country-header">
           <span class="country-code">ES</span>
@@ -101,34 +91,23 @@
             <li>کیفیت بالای زندگی</li>
           </ul>
           <p class="country-extra">
-            • میانگین شهریه: 1,000–3,000 یورو/سال<br />
-            • هزینه زندگی در مادرید/بارسلونا: ~800 یورو/ماه<br />
-            • امکان یادگیری زبان اسپانیایی به‌عنوان مزیت کار پس از تحصیل
+            • شهریه: ۱,۰۰۰ تا ۳,۰۰۰ یورو/سال<br />
+            • هزینه زندگی در مادرید/بارسلونا: ~۸۰۰ یورو/ماه<br />
+            • یادگیری زبان اسپانیایی = فرصت شغلی بیشتر
           </p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ====== CONTACT FORM ====== -->
+  <!-- ====== SECTION: فرم مشاوره ====== -->
   <section class="section contact" id="contact">
     <h2>فرم درخواست مشاوره</h2>
     <form id="form" method="POST" action="#">
       <input type="text" id="name" name="name" placeholder="نام شما" required />
-      <input
-        type="text"
-        id="phone"
-        name="phone"
-        placeholder="شماره تماس (مثلاً 09123456789)"
-        required
-      />
-      <textarea
-        id="message"
-        name="message"
-        rows="4"
-        placeholder="پیام شما..."
-        required
-      ></textarea>
+      <input type="text" id="phone" name="phone" placeholder="شماره تماس (مثلاً 09123456789)" required />
+      <textarea id="message" name="message" rows="4" placeholder="پیام شما..." required></textarea>
       <button type="submit" id="submitBtn">ارسال درخواست</button>
     </form>
     <div id="status" class="status-text"></div>
@@ -143,15 +122,9 @@
         <p>آدرس دفتر: -</p>
       </div>
       <div class="social-icons">
-        <a href="#" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-        </a>
-        <a href="#" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" />
-        </a>
-        <a href="#" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" />
-        </a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" /></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" /></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" /></a>
       </div>
     </div>
   </footer>
