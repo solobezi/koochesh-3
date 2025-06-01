@@ -1,5 +1,5 @@
 document.getElementById('form').addEventListener('submit', function (e) {
-  e.preventDefault();
+  e.preventDefault(); // مانع رفرش شدن صفحه می‌شود
 
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
@@ -7,12 +7,14 @@ document.getElementById('form').addEventListener('submit', function (e) {
   const status = document.getElementById('status');
   const submitBtn = document.getElementById('submitBtn');
 
+  // بررسی خالی بودن فیلدها
   if (!name || !phone || !message) {
     status.innerText = "لطفاً تمام فیلدها را با دقت تکمیل کنید.";
     status.style.color = "orange";
     return;
   }
 
+  // بررسی فرمت شماره موبایل
   const phoneRegex = /^09\d{9}$/;
   if (!phoneRegex.test(phone)) {
     status.innerText = "شماره تماس واردشده معتبر نیست. لطفاً شماره‌ای وارد کنید که با 09 شروع شده و 11 رقم باشد.";
@@ -20,6 +22,7 @@ document.getElementById('form').addEventListener('submit', function (e) {
     return;
   }
 
+  // تایید نهایی از کاربر
   if (!confirm("آیا اطلاعات واردشده صحیح است؟")) return;
 
   status.innerText = "⏳ در حال ارسال...";
