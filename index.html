@@ -61,7 +61,7 @@
       margin-top: 2rem;
     }
     .country-box {
-      background-color: #1f1f1f;
+      background-color: #1f1f0f;
       padding: 1.5rem;
       border-radius: 16px;
       border: 1px solid #2a2a2a;
@@ -145,6 +145,8 @@
     <nav>
       <a href="#countries">کشورها</a>
       <a href="#contact">مشاوره</a>
+      <!-- اگر ورود/ثبت‌نام لازم نیست، این لینک را حذف کنید -->
+      <a href="#login">ورود</a>
     </nav>
   </header>
 
@@ -187,6 +189,16 @@
     </div>
   </section>
 
+  <section class="section" id="login" style="max-width: 400px; background-color: #1a1a1a; margin: 2rem auto; padding: 2rem; border-radius: 16px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+    <h2 style="text-align:center; color:#d4af37; margin-bottom:1.5rem;">ورود یا ثبت‌نام</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="ایمیل" required />
+      <input type="password" id="loginPassword" placeholder="رمز عبور" required />
+      <button type="submit">ورود / ثبت‌نام</button>
+    </form>
+    <div id="loginStatus" class="form-status" style="margin-top: 1rem; text-align:center; font-size: 0.9rem; color: #ff6b6b;"></div>
+  </section>
+
   <section class="section contact" id="contact" style="max-width: 600px; margin: 4rem auto; background-color: #1a1a1a; padding: 2.5rem; border-radius: 20px; box-shadow: 0 0 30px rgba(0,0,0,0.4);">
     <h2 style="text-align: center; color: #d4af37; margin-bottom: 2.5rem; font-size: 2rem; font-weight: 700;">درخواست مشاوره رایگان</h2>
     <form id="form" style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -221,11 +233,14 @@
   </footer>
 
   <script>
+    // فقط تابع toggleDetails برای نمایش توضیحات کشورهای مقصد
     function toggleDetails(id) {
       const el = document.getElementById(id);
       el.style.display = el.style.display === "none" ? "block" : "none";
     }
   </script>
+
+  <!-- اینجا فایل form.js را لود می‌کنیم؛ دقت کن مسیر صحیح باشد -->
   <script src="form.js"></script>
 </body>
 </html>
