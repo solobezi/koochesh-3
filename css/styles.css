@@ -119,11 +119,11 @@ h2 {
   max-height: 0;
   overflow: hidden;
   padding: 0 1rem;
-  transition: all 0.4s ease;
+  transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
 .country-card.open .country-details {
-  max-height: 800px;
+  max-height: 1000px;
   padding: 1rem;
 }
 
@@ -246,12 +246,11 @@ footer {
   height: 32px;
   width: 32px;
   object-fit: contain;
-  filter: none;
   transition: transform 0.2s ease;
 }
 
 .social-icons img:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* ===== MEDIA QUERIES ===== */
